@@ -7,6 +7,7 @@ function loop(iterations, steps, ctx) {
     //im = toString(im);
     for (let i=-2; i<2; i+=steps) {
         for (let r=-2; r<2; r+=steps) {
+            ctx.fillStyle = "black";
             x = 0;
             comp = [];
             if (Math.sqrt(((i/2 * radius)**2 + (r/2 * radius)**2)) > radius) {
@@ -34,6 +35,16 @@ function loop(iterations, steps, ctx) {
                     x++;
                 }
                 if (flag) {
+                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                } else if (x < 5) {
+                    ctx.fillStyle = "#875709";
+                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                } 
+                else if (x >= 5 && x < 15) {
+                    ctx.fillStyle = "#783905";
+                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                } else if (x >= 15) {
+                    ctx.fillStyle = "#fcba03";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 }
             }
@@ -72,4 +83,4 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = "black";
 ctx.font = "18px serif";
 //axes(ctx);
-loop(200, 4/(canvas.width*6), ctx);
+loop(200, 4/(canvas.width*1), ctx);
