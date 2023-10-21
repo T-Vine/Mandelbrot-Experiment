@@ -66,9 +66,10 @@ function axes(ctx) {
 
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ctx.strokeStyle = "black";
 ctx.font = "18px serif";
 axes(ctx);
-loop(100, 0.01, ctx);
+loop(200, 4/canvas.width, ctx);
