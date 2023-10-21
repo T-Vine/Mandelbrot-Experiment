@@ -19,7 +19,7 @@ function loop(iterations, steps, ctx) {
                 while (x < iterations) {
                     if (x===0){
                         comp.push(i);
-                        comp.push(r);
+                        comp.push(-r);
                     }
                     newRe = (comp[0]*comp[[0]]) - (comp[1]*(comp[1]));
                     newIm = 2*(comp[0]*comp[1]);
@@ -31,7 +31,7 @@ function loop(iterations, steps, ctx) {
                     }
                     comp = [];
                     comp.push(newRe);
-                    comp.push(newIm);
+                    comp.push(-newIm);
                     x++;
                 }
                 if (flag) {
@@ -44,15 +44,18 @@ function loop(iterations, steps, ctx) {
                         ctx.fillStyle = "blue";
                     } */
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } else if (x < 5) {
-                    ctx.fillStyle = "#875709";
+                } else if (x < 2) {
+                    ctx.fillStyle = "#020024";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 } 
-                else if (x >= 5 && x < 15) {
-                    ctx.fillStyle = "#783905";
+                else if (x >= 2 && x < 5) {
+                    ctx.fillStyle = "#090979";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } else if (x >= 15 && x < 25) {
-                    ctx.fillStyle = "#fcba03";
+                } else if (x >= 5 && x < 10) {
+                    ctx.fillStyle = "#0191b9";
+                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                } else if (x >= 10) {
+                    ctx.fillStyle = "#00d4ff";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 } 
             }
