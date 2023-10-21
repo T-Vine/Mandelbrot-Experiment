@@ -1,5 +1,5 @@
 function loop(iterations, steps, ctx) {
-    let radius = (window.innerHeight)/2;
+    let radius = (window.innerHeight);
     let comp = [];
     let newIm, newRe, x, flag, within;
     let marked = [];
@@ -51,7 +51,7 @@ function loop(iterations, steps, ctx) {
                 else if (x >= 5 && x < 15) {
                     ctx.fillStyle = "#783905";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } else if (x >= 15 && x < 25) {
+                } else if (x >= 15) {
                     ctx.fillStyle = "#fcba03";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 } 
