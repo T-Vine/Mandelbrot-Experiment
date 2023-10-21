@@ -1,5 +1,5 @@
 function loop(iterations, steps, ctx) {
-    let radius = (window.innerHeight/2)/1.5;
+    let radius = (window.innerHeight);
     let comp = [];
     let newIm, newRe, x, flag;
     let marked = [];
@@ -71,5 +71,5 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ctx.strokeStyle = "black";
 ctx.font = "18px serif";
-axes(ctx);
-loop(200, 4/canvas.width, ctx);
+//axes(ctx);
+loop(200, 4/(canvas.width*6), ctx);
