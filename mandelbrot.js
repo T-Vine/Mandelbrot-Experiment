@@ -20,8 +20,10 @@ function loop(iterations, steps, ctx) {
                         comp.push(i);
                         comp.push(r);
                     }
-                    newRe = (comp[0]*comp[[0]]) - (comp[1]*(comp[1]));
-                    newIm = 2*(comp[0]*comp[1]);
+                    //newRe = (comp[0]*comp[[0]]) - (comp[1]*(comp[1]));
+                    newRe = (comp[0]**6)+(15*comp[0]**4 * -(comp[1]**2))+(15*comp[0]**2 * -(comp[1]**4))+(comp[1]**6);
+                    newIm = (6*comp[0]**5 * comp[1])+(20*comp[0]**3 * comp[1]**3)+(6*comp[0]*comp[1]**5);
+                    //newIm = 2*(comp[0]*comp[1]);
                     newRe = newRe+i;
                     newIm = newIm+r;
                     if (Math.abs(newIm) > 2 || Math.abs(newRe) > 2) {
