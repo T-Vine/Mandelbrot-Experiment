@@ -30,9 +30,9 @@ function loop(iterations, steps, ctx) {
                     comp.push(newRe);
                     comp.push(newIm);
                     x++;
-                    if (flag) {
-                        ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                    }
+                }
+                if (flag) {
+                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 }
             }
         }
