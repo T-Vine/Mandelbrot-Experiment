@@ -1,7 +1,7 @@
 function loop(iterations, steps, ctx) {
-    let radius = (window.innerHeight);
+    let radius = (window.innerHeight)/2;
     let comp = [];
-    let newIm, newRe, x, flag;
+    let newIm, newRe, x, flag, within;
     let marked = [];
     //re = toString(re);
     //im = toString(im);
@@ -35,6 +35,14 @@ function loop(iterations, steps, ctx) {
                     x++;
                 }
                 if (flag) {
+                    /*
+                    within = (comp[0]**2 + comp[1]**2)-(i**2 + r**2);
+                    console.log(within);
+                    if (within < 0) {
+                        ctx.fillStyle = "#4b0082";
+                    } else if (within >= 0.01) {
+                        ctx.fillStyle = "blue";
+                    } */
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 } else if (x < 5) {
                     ctx.fillStyle = "#875709";
@@ -43,10 +51,10 @@ function loop(iterations, steps, ctx) {
                 else if (x >= 5 && x < 15) {
                     ctx.fillStyle = "#783905";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } else if (x >= 15) {
+                } else if (x >= 15 && x < 25) {
                     ctx.fillStyle = "#fcba03";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                }
+                } 
             }
         }
     }
