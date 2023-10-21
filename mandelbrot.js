@@ -16,12 +16,14 @@ function loop(iterations, steps, ctx) {
                 flag = true;
                 
                 while (x < iterations) {
-                    comp.push(i);
-                    comp.push(r);
+                    if (x===0){
+                        comp.push(i);
+                        comp.push(r);
+                    }
                     newRe = (comp[0]*comp[[0]]) - (comp[1]*(comp[1]));
                     newIm = 2*(comp[0]*comp[1]);
-                    newRe = newRe+comp[0];
-                    newIm = newIm+comp[1];
+                    newRe = newRe+i;
+                    newIm = newIm+r;
                     if (Math.abs(newIm) > 2 || Math.abs(newRe) > 2) {
                         flag = false;
                         break;
