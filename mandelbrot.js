@@ -5,8 +5,8 @@ function loop(iterations, steps, ctx) {
     let marked = [];
     //re = toString(re);
     //im = toString(im);
-    for (let i=-2; i<2; i+=steps) {
-        for (let r=-2; r<2; r+=steps) {
+    for (let i=-0.8; i<-0.7; i+=steps) {
+        for (let r=0.05; r<0.15; r+=steps) {
             ctx.fillStyle = "black";
             x = 0;
             comp = [];
@@ -43,17 +43,18 @@ function loop(iterations, steps, ctx) {
                     } else if (within >= 0.01) {
                         ctx.fillStyle = "blue";
                     } */
-                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                    ctx.fillRect(i/-0.7/0.1 * radius - 6000,  r/0.15*1.25 * radius - 170, 1,1);
+                    //console.log(i/-0.15*1.2 * radius);
                 } else if (x < 5) {
                     ctx.fillStyle = "#875709";
-                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                    ctx.fillRect(i/-0.7/0.1 * radius - 6000,r/0.15*1.25 * radius -170, 1,1);
                 } 
                 else if (x >= 5 && x < 15) {
                     ctx.fillStyle = "#783905";
-                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                    ctx.fillRect(i/-0.7/0.1 * radius - 6000, r/0.15*1.25  * radius-170, 1,1);
                 } else if (x >= 15) {
                     ctx.fillStyle = "#fcba03";
-                    ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
+                    //ctx.fillRect(i/-0.7/0.5  * radius - 400, r/0.15/0.5 * radius, 1,1);
                 } 
             }
         }
@@ -91,4 +92,5 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = "black";
 ctx.font = "18px serif";
 //axes(ctx);
-loop(200, 4/(canvas.width*1), ctx);
+loop(200, 0.00005 , ctx);
+//4/(canvas.width*1)
