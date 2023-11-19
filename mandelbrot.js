@@ -21,15 +21,15 @@ function loop(iterations, steps, ctx) {
                         comp.push(i);
                         comp.push(r);
                     }
-                    newRe = (comp[0]*comp[[0]]) - (comp[1]*(comp[1]));
+                    newRe = (comp[0]*comp[[0]]) - (comp[1]*(comp[1])); //(comp[0]-comp[1])
                     newIm = 2*(comp[0]*comp[1]);
                     if (no) {
                         newRe = newRe+i;
                         newIm = newIm+r;
                         no = false;
                     } else {
-                        newRe = newRe+0.3;
-                        newIm = newIm+0.5;
+                        newRe = newRe-0.5;
+                        newIm = newIm+0.598;
                     }
                     
                     
