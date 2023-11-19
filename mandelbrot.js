@@ -15,7 +15,7 @@ function loop(iterations, steps, ctx) {
                 continue;
             } else { // Only run if point is not outside of the circle.
                 flag = true;
-                
+                let no = true;
                 while (x < iterations) {
                     if (x===0){
                         comp.push(i);
@@ -23,12 +23,20 @@ function loop(iterations, steps, ctx) {
                     }
                     newRe = (comp[0]*comp[[0]]) - (comp[1]*(comp[1]));
                     newIm = 2*(comp[0]*comp[1]);
-                    newRe = newRe+i;
-                    newIm = newIm+r;
+                    if (no) {
+                        newRe = newRe+i;
+                        newIm = newIm+r;
+                        no = false;
+                    } else {
+                        newRe = newRe+0.3;
+                        newIm = newIm+0.5;
+                    }
+                    
+                    
                     if (Math.abs(newIm) > 2 || Math.abs(newRe) > 2) {
                         flag = false;
                         break;
-                    }
+                    } 
                     comp = [];
                     comp.push(newRe);
                     comp.push(newIm);
@@ -47,14 +55,14 @@ function loop(iterations, steps, ctx) {
                 } else if (x < 5) {
                     ctx.fillStyle = "#875709";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } 
+                } /*
                 else if (x >= 5 && x < 15) {
                     ctx.fillStyle = "#783905";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 } else if (x >= 15) {
                     ctx.fillStyle = "#fcba03";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } 
+                } */
             }
         }
     }
