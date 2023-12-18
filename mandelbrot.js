@@ -53,16 +53,16 @@ function loop(iterations, steps, ctx) {
                     } */
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 } else if (x < 5) {
-                    ctx.fillStyle = "#875709";
+                    ctx.fillStyle = "#301934";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } /*
+                } 
                 else if (x >= 5 && x < 15) {
-                    ctx.fillStyle = "#783905";
+                    ctx.fillStyle = "#301934";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
                 } else if (x >= 15) {
                     ctx.fillStyle = "#fcba03";
                     ctx.fillRect((window.innerWidth/2)+i/2 * radius,(window.innerHeight/2)-r/2 * radius, 2,2);
-                } */
+                } 
             }
         }
     }
